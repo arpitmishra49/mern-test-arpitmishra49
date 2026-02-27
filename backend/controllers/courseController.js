@@ -5,6 +5,7 @@ import {
     deleteCourse,
   } from '../services/courseService.js';
   
+  //Gets all the courses
   
   const getCourses = async (req, res) => {
     try {
