@@ -6,8 +6,9 @@ import Login from './pages/Login'
 
 
 
-import AllCourses from './pages/Allcourses'
+
 import Dashboard from './pages/DashBoard'
+import AllCourses from './pages/Allcourses'
 
 const App = () => {
   return (
