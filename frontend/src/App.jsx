@@ -9,8 +9,10 @@ import Login from './pages/Login'
 
 
 
-import DashbBoard from './pages/DashBoard.jsx'
+
 import Allcourses from './pages/Allcourses.jsx'
+import DashBoard from './pages/DashBoard.jsx'
+
 
 
 
@@ -38,7 +40,7 @@ const App = () => {
             path="/dashboard"
             element={
               <PrivateRoute>
-                <DashbBoard />
+                <DashBoard />
               </PrivateRoute>
             }
           />
