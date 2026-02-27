@@ -2,6 +2,7 @@ import jwt from 'jsonwebtoken';
 import Student from '../models/Student.js';
 
 
+
 const protect = async (req, res, next) => {
   let token;
 

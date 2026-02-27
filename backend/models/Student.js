@@ -24,15 +24,14 @@ const studentSchema = new mongoose.Schema(
   { timestamps: true }
 );
 
-
-studentSchema.pre('save', async function (next) {
-  if (!this.isModified('password')) return next();
+// Hash password before saving to DB
+studentSchema.pre('save', async function () {
+  if (!this.isModified('password')) return;
   const salt = await bcrypt.genSalt(10);
   this.password = await bcrypt.hash(this.password, salt);
-  next();
 });
 
-
+// Instance method: compare plain password with hashed password
 studentSchema.methods.matchPassword = async function (enteredPassword) {
   return await bcrypt.compare(enteredPassword, this.password);
 };
