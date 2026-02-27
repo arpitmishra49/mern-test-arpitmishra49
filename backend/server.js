@@ -9,19 +9,19 @@ dotenv.config();
 
 const app = express();
 
+app.use(cors({
+  origin: process.env.CLIENT_URL || 'http://localhost:5173',
+  credentials: true,
+}));
 
-app.use(cors());
 app.use(express.json());
-
 
 app.use('/api/auth', authRoutes);
 app.use('/api/courses', courseRoutes);
 
-
 app.get('/', (req, res) => {
   res.json({ message: 'Course Management API is running' });
 });
-
 
 const PORT = process.env.PORT || 3000;
 
